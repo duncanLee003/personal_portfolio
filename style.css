@@ -51,8 +51,8 @@ nav .nav-bar{
     max-width: 1000px;
     width: 100%;
     background-color: var(--nav-color);
-    margin: 0 auto;
-    padding: 0 30px;
+    margin-left: 0 auto;
+    padding: 40px 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -67,17 +67,6 @@ nav .nav-bar .sidebarOpen{
 
 }
 
-nav .nav-bar .logo a{
-    font-size: 25px;
-    font-weight: 500;
-    color: var(--text-color);
-    text-decoration: none;
-
-}
-
-.menu .logo-toggle{
-    display: none;
-}
 
 .nav-bar .nav-links {
     display: flex;
@@ -97,30 +86,71 @@ nav .nav-bar .logo a{
     font-weight: 500;
     color: var(--text-color);
     text-decoration: none;
-    padding: 10px;
+    padding: 20px;
 }
 
-.nav-links li a::before{
-    content:'';
+
+.x-toggle{
+    display: none;
+}
+
+.projects_menu{
+    position: relative;
+}
+
+.projects_submenu{
     position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    height: 6px;
-    width: 6px;
-    border-radius: 50%;
-    background-color: var(--text-color);
+    top: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    background-color: var(--side-nav);
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
     opacity: 0;
-    transition: all 0.3s ease;
+    visibility: hidden;
 }
 
 
 
-.nav-links li:hover a::before{
+.projects_menu:hover .projects_submenu{
     opacity: 1;
-
+    visibility: visible;
 }
 
+
+.projects_submenu > li > a {
+    display: block;
+    padding: 12px 15px;
+    margin: 0;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.dev_menu{
+    position: relative;
+}
+
+.dev_submenu{
+    position: absolute;
+    top: 100%;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    background-color: var(--side-nav);
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.dev_menu:hover .dev_submenu{
+    opacity: 1;
+    visibility: visible;
+}
 
 @media (max-width: 1000px) {
     nav .nav-bar .sidebarOpen{
@@ -140,59 +170,51 @@ nav .nav-bar .logo a{
         background-color: var(--side-nav);
         z-index: 100;
         transition: all 0.4s ease;
-        color: #ece4d5;
+
     }
 
 
 
     nav.active .menu{
-        left: -0%;
+        left: 0%;
         
 
 
     }
 
-    nav.active .nav-bar .navLogo a{
-        opacity: 0;
-        transition: all 0.3s ease;
-        
-        
-    }
 
-    .menu .logo-toggle{
-        display: block;
+    .x-toggle{
         width: 100%;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        color: #ece4d5;
-        
+        justify-content: flex-end;
+        color: var(--text-color)
     }
 
 
-    .logo-toggle .siderbarClose{
-        color: #ece4d5;
+    .x-toggle .siderbarClose{
+        color: var(--text-color);
         font-size: 24px;
         cursor: pointer;
 
     }
 
     .nav-bar .nav-links {
+        display: flex;
         flex-direction: column;
         padding-top: 30px;
-        
+        align-items: flex-start;
+        width: 100%;
 
     }
 
     .nav-links li a{
         display: block;
-        margin-top: 20px;
-        color: #ece4d5;
+        width: 100%;
+        margin: 0;
+        padding: 15px;
+        color: var(--text-color);
     }
 
-    .menu .logo-toggle .logo a{
-        color: #ece4d5;
-    }
 
 }
 
@@ -204,34 +226,37 @@ nav .nav-bar .logo a{
     min-height: 80vh;
     flex-direction: column;
     gap: 1em;
-    margin: 2em 5em;
+    width: 80%;
+    max-width: 1900px;
+    margin: 2em auto;
     border: 2px solid transparent;
 }
 
 
 
-section{
+.index_container1_box{
     flex: 4;
     display: flex;
     gap: 1em;
-
-
 }
 
 .index_container1_box_left{
+    display:flex;
     flex: 1;
     border: 2px solid transparent;
     margin-top: 10em;
     color:var(--text-color);
-    align-items:first baseline;
+    align-items: flex-start;
+    flex-direction: column;
+    min-width: 0;
 
 }
 
 .index_container1_box_left h1{
-    font-size: 43px;
-    margin-bottom: 1em;
-    margin-left: 2em;
-    font-weight: 400;
+    font-size: 50px;
+    margin-bottom: 0.3em;
+    margin-left: 0;
+    font-weight: bold;
     color:var(--text-color);
 }
 
@@ -239,18 +264,17 @@ section{
 
 .index_container1_box_left hr{
     display: block;
-    width:  45em;
+    width: 100%;
     border: 0;
     margin-bottom: 1em;
     border-top: 5px solid var(--secondary-color);
-    max-width:100%;
-    max-height:100%;
+    max-width: 45em;
 }
 
 .index_container1_box_left h2{
     font-size: 43px;
     margin-bottom: 1em;
-    margin-left: 2em;
+    margin-left: 0;
     font-weight: 400;
     color:var(--text-color);
     
@@ -259,9 +283,11 @@ section{
 .index_container1_box_left p{
     font-size: 20px;
     margin-bottom: 0.5em;
-    margin-left: 4em;
-    margin-right: 4em;
+    margin-left: 0;
+    margin-right: 0;
     color:var(--text-color);
+    font-weight: 100;
+    word-spacing: 2px;
     
 }
 
@@ -275,7 +301,7 @@ section{
     border-radius: 1px;
     margin-top: 20px;
     padding: 10px 20px;
-    margin-left: 4em;
+    margin-left: 0;
     cursor: pointer;
     
 }
@@ -287,47 +313,67 @@ section{
     flex: 1;
     border: 2px solid transparent;
     align-items: center;
+    display: flex;
+    justify-content: center;
 
 }
-img {
+
+.index_container1_box_right img {
     display: flex;
     max-width:100%;
     max-height:100%;
     min-height: 100%;
-    align-items: center;
-    /* resizes image*/
+    
 }
 
 
 
 
-@media (max-width: 1000px){
-    section,
-    .index_container1.second section{
+@media (max-width: 800px){
+    
+    .index_container1_box{
         flex-direction: column;
+        gap: 2em;
     }
+
+
     .index_container1{
-        margin: 1em 2em;
+        margin: auto;
+        width: 90%;
+        min-height: auto;
     }
+
+
+    .index_container1_box_left {
+        margin-top: 3em;
+        width: 100%;
+    }
+
     .index_container1_box_left h1{
-    margin-left: auto;
+        font-size: 40px;
+    }
+
+    .index_container1_box_left hr{
+        width: 100%;
     }
 
     .index_container1_box_left p{
-    margin-left: auto;
+        font-size: 18px;
     }
 
     .index_container1_box_left h2{
-        margin-left: auto;
+        font-size: 30px;
     }
 
     .index_container1_box_left button{
-    margin-left: auto;
+        margin-left: 0;
     }
 
-    .index_container1_box_left {
-        margin-top: auto;
+    .index_container1_box_right{
+        width: 100%;
     }
+
+    
 
 
 
