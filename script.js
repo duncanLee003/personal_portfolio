@@ -13,3 +13,14 @@ body.addEventListener("click" , e =>{
         nav.classList.remove("active");
     }
 });
+
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme) {
+    document.body.classList.add(savedTheme);
+}
+
+function toggleTheme() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+    localStorage.setItem("theme", element.classList.contains("dark-mode") ? "dark-mode" : "");
+}

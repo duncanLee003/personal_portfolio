@@ -27,6 +27,30 @@ a {
 
 }
 
+.dark-mode{
+    --body-color: #1e1e1e;
+    --nav-color: #1e1e1e;
+    --nav-sec-color: #423f3f;
+    --side-nav: #423f3f;
+    --text-color: #f5f5f5;
+    
+}
+
+.theme-mode{
+    position: relative;
+    margin-right: 0 auto;
+}
+
+.theme-mode button{
+    position: relative;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 1000px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
 body{
     height: 100vh;
     background-color: var(--body-color);
@@ -34,11 +58,12 @@ body{
 }
 
 
+
 nav{
     position: fixed;
     top:0;
     left: 0;
-    height: 70px;
+    height: 80px;
     width: 100%;
     background-color: var(--nav-color);
     z-index: 100;
@@ -49,7 +74,6 @@ nav{
 nav .nav-bar{
     position: relative;
     height: 100%;
-    max-width: 1000px;
     width: 100%;
     background-color: var(--nav-color);
     margin-left: 0 auto;
@@ -224,7 +248,6 @@ nav .nav-bar .sidebarOpen{
         color: var(--text-color);
     }
 
-
 }
 
 
@@ -336,7 +359,16 @@ nav .nav-bar .sidebarOpen{
 }
 
 
-
+.index_container2{
+    display: flex;
+    min-height: 80vh;
+    flex-direction: column;
+    gap: 1em;
+    width: 80%;
+    max-width: 1900px;
+    margin: 2em auto;
+    border: 2px solid transparent;
+}
 
 @media (max-width: 800px){
     
